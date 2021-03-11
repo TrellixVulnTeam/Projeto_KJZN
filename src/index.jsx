@@ -1,5 +1,4 @@
-import React from 'react';
-import {Appp} from './App';
-function App(){
-    return <h1>Helloo World</h1>
-} 
+import {render} from 'react-dom';
+import {App} from './App';
+
+render(<App/>, document.getElementById('root'))
