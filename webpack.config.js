@@ -6,13 +6,13 @@
     module.exports={
         mode: isDevelopement ? 'development': 'production',
         devtool: isDevelopement ? 'eval-source-map' : 'source-map',
-    	entry: path.resolve(__dirname,'src', 'index.jsx'),
+    	entry: path.resolve(__dirname,'src', 'index.tsx'),
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: 'bundle.js'
         },
         resolve     : {
-            extensions:['.js','.jsx'],
+            extensions:['.js','.jsx','.ts','.tsx'],
         },
         devServer:{
             contentBase: path.resolve(__dirname,'public'),
@@ -27,7 +27,7 @@
         module:{
             rules:[
                 {
-                  test:/\.jsx$/,
+                  test:/\.(j|t)sx$/,
                   exclude:/node_modules/,
                   use:{
                       loader:'babel-loader',
